@@ -918,6 +918,7 @@ void loop() {
         }
         else {
           circadianMode = false;
+          write_four_pin(0,0,0,0);  
           Serial.println("close circadian mode");
         }
 
@@ -1020,11 +1021,6 @@ void loop() {
     }
     delay(1000);
   }
-  else {
-    write_four_pin(0,0,0,0);
-  }
-
-
 }
 
 

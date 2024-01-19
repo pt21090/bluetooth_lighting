@@ -1,8 +1,8 @@
 // 燈珠配置
-int colorTempHigh     = 6000;
-int colorTempMiddle   = 4000;
-int colorTempLow      = 2000;
-int colorTempSuperlow = 1500;
+int colorTempHigh     = 5600;
+int colorTempMiddle   = 2900;
+int colorTempLow      = 1700;
+int colorTempSuperlow = 1450;
 
 // 假設LED有一起始電壓, 並且各色燈珠亮度對電壓為線性, 且敏感度不同
 // 起始電壓、實驗量測

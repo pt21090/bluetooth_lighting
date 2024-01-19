@@ -918,11 +918,6 @@ void loop() {
         }
         else {
           circadianMode = false;
-          // write_four_pin(0,0,0,0);   不知要不要加 沒事可刪?????????
-          // analogWrite(ledPin_yellow, 0);  delete
-          // analogWrite(ledPin_green, 0);
-          // analogWrite(ledPin_red, 0);
-          // analogWrite(ledPin_other, 0);
           Serial.println("close circadian mode");
         }
 
@@ -939,10 +934,6 @@ void loop() {
         }
 
         write_four_pin(fourPinvalue[0], fourPinvalue[1], fourPinvalue[2], fourPinvalue[3]);
-        // analogWrite(ledPin_yellow, fourPinvalue[0]);  delete
-        // analogWrite(ledPin_green, fourPinvalue[1]);
-        // analogWrite(ledPin_red, fourPinvalue[2]);
-        // analogWrite(ledPin_other, fourPinvalue[3]);
 
         break;
 
@@ -1015,10 +1006,6 @@ void loop() {
     if (hours >= 6 && hours < 19) {
       settingRow = (hours-6) * 60 + minutes;
       write_four_pin(cmode[settingRow][0], cmode[settingRow][1], cmode[settingRow][2], cmode[settingRow][3]);
-      // analogWrite(ledPin_yellow, cmode[settingRow][0]);  delete
-      // analogWrite(ledPin_green, cmode[settingRow][1]);
-      // analogWrite(ledPin_red, cmode[settingRow][2]);
-      // analogWrite(ledPin_other, cmode[settingRow][3]);
       Serial.println("update circadian light, pin value: ");
 
       // Serial.println(settingRow);
@@ -1029,13 +1016,12 @@ void loop() {
     }
     else {
       write_four_pin(0,0,0,0);
-      // analogWrite(ledPin_yellow, 0);  delete
-      // analogWrite(ledPin_green, 0);
-      // analogWrite(ledPin_red, 0);
-      // analogWrite(ledPin_other, 0);
       Serial.println("now is at circadian night");
     }
     delay(1000);
+  }
+  else {
+    write_four_pin(0,0,0,0);
   }
 
 
